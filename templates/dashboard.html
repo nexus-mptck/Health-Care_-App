@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Enter Your Health Details</h2>
+
+    <form method="POST">
+        <input type="number" name="heart_rate" placeholder="Heart Rate (bpm)" required>
+        <input type="text" name="bp" placeholder="Blood Pressure (120/80)" required>
+        <input type="number" name="sugar" placeholder="Blood Sugar (mg/dL)" required>
+        <input type="number" name="oxygen" placeholder="Oxygen Level (%)" required>
+        <input type="number" step="0.1" name="temperature" placeholder="Temperature (°C)" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if vitals %}
+    <div class="results">
+        <h3>Your Submitted Data</h3>
+        <p>Heart Rate: {{ vitals.heart_rate }}</p>
+        <p>Blood Pressure: {{ vitals.bp }}</p>
+        <p>Blood Sugar: {{ vitals.sugar }}</p>
+        <p>Oxygen Level: {{ vitals.oxygen }}</p>
+        <p>Temperature: {{ vitals.temperature }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
