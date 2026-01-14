@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Registered Members</h1>
+    <ul>
+        {% for member in members %}
+            <li>
+                Name: {{ member.name }}, Blood Type: {{ member.blood_type }}, Area: {{ member.area }}
+                <ul>
+                    {% for record in member.health_records %}
+                        <li>
+                            Time: {{ record.vitals.timestamp.strftime("%Y-%m-%d %H:%M:%S") }}<br>
+                            Vitals: {{ record.vitals }}<br>
+                            Suggestions: {{ record.suggestions }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
