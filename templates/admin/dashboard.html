@@ -14,7 +14,7 @@
                         <li>
                             Time: {{ record.vitals.timestamp.strftime("%Y-%m-%d %H:%M:%S") }}<br>
                             Vitals: {{ record.vitals }}<br>
-                            Suggestions: {{ record.suggestions }}
+                            Condition: {{ record.condition | join(', ') }}
                         </li>
                     {% endfor %}
                 </ul>
