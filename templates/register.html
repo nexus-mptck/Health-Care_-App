@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Registration</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Patient Details</h2>
+    <form method="POST">
+
+        <input name="name" placeholder="Name" required>
+        <input name="blood" placeholder="Blood Type" required>
+        <input name="address" placeholder="Address" required>
+        <input name="area" placeholder="Area" required>
+        <input name="family" placeholder="Family Details" required>
+
+        <h3>Health Data</h3>
+        <input type="number" name="heart_rate" placeholder="Heart Rate" required>
+        <input name="bp" placeholder="Blood Pressure (120/80)" required>
+        <input type="number" name="sugar" placeholder="Blood Sugar" required>
+        <input type="number" name="oxygen" placeholder="Oxygen %" required>
+        <input type="number" step="0.1" name="temperature" placeholder="Temperature °C" required>
+
+        <input name="organ_problem" placeholder="Affected Organ (heart, lung, kidney, etc)" required>
+
+        <button type="submit">Analyze Health</button>
+    </form>
+</div>
+</body>
+</html>
